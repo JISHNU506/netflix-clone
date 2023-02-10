@@ -26,7 +26,7 @@ function Navbar({search}) {
       <a href="#">Latest</a>
     </li>
     <li>
-      <a href="/Login">Login</a>
+      <a href="#">Login</a>
     </li>
   </ul>
   <div className="search" >
