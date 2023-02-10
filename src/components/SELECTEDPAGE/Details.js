@@ -1,5 +1,5 @@
 import axios from "axios";
-import Overlay from "react-overlay-component";
+
 
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,8 @@ import "./Details.css";
 
 export default function Details({ data, smdata, similar, credits, omdb }) {
   const [urlid, setUrld] = useState({});
-  console.log("detailsomdb===>", omdb);
+ 
+  // console.log("detailsomdb===>", omdb);
   const navigate = useNavigate();
   const myref = useRef();
 
@@ -50,25 +51,25 @@ export default function Details({ data, smdata, similar, credits, omdb }) {
     },
   };
   const MovieTriler = (e) => {
-    console.log("triler======>", e);
+    // console.log("triler======>", e);
     axios
       .get(
         `https://api.themoviedb.org/3/movie/${e}/videos?api_key=6cdf1bc39c14d06f4b51e70d622928f4&language=en-US`
       )
       .then((responce) => {
-        if (responce.data.results.length !== 0) {
-          setUrld(responce.data.results[0]);
+        if (responce?.data?.results?.length !== 0) {
+          setUrld(responce?.data?.results[0]);
           myref.current.classList.add("show-video");
        
         } else {
-          console.log("empty Array");
+          // console.log("empty Array");
         }
       });
   };
 
   
   const closeVideo = () => {
-    console.log("action===>", myref.current.classList);
+    // console.log("action===>", myref.current.classList);
 
     myref.current.classList.remove("show-video");
     setUrld({});
@@ -78,6 +79,8 @@ export default function Details({ data, smdata, similar, credits, omdb }) {
   return (
     <>
       <Navbar />
+
+
 
       <div className="main">
         <div className="image">
@@ -111,7 +114,7 @@ export default function Details({ data, smdata, similar, credits, omdb }) {
             </a>
             <div ref={myref} className="video-container"  >
               <div className="video-box">
-              {urlid && <YouTube id="myvideo" videoId={urlid.key} opts={opts} />}
+              {urlid && <YouTube id="myvideo" videoId={urlid?.key} opts={opts} />}
               <i class='bx bx-x close-video' onClick={closeVideo}></i>
               </div>
 

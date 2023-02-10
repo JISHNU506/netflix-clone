@@ -151,6 +151,7 @@
   /* background-color: brown; */
   color: whitesmoke;
   font-weight: bold;
+      cursor: pointer;
   background-color: rgba(201, 10, 10, 0.716);
   border: 0.5px solid #ffffff59;
 }

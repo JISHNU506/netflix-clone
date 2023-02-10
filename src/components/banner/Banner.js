@@ -7,20 +7,20 @@ function Banner() {
   const [movie,setMovie]=useState([])
   
   useEffect(()=>{
-    console.log(API_KEY);
+    // console.log(API_KEY);
     axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`).then((responce)=>{
-      console.log("responce====>",responce.data.results);
+      // console.log("responce====>",responce.data.results);
 
-      const m=Math.floor(Math.random() * 20)
-      console.log(m);
-      setMovie(responce.data.results[m])
+      const m=Math?.floor(Math.random() * 20)
+      // console.log(m);
+      setMovie(responce?.data?.results[m])
       // const Time=setInterval(()=>{
       //   const m=Math.floor(Math.random() * 20)
       //   setMovie(responce.data.results[m])
       //     console.log(m);
       // },5000)
     })
-    console.log("movie===>",movie);
+    // console.log("movie===>",movie);
   },[])
   return (
     <>

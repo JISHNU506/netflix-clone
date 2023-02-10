@@ -90,6 +90,10 @@ header .logo img{
 .search a{
 	text-decoration: none;
 }
+.search a:hover{
+	text-decoration: none;
+}
+
 
 .search .item-search{
 	padding: 5px 55px;

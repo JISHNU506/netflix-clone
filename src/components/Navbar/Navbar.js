@@ -1,5 +1,6 @@
 import { logDOM } from '@testing-library/react';
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 import './Navbar.css';
 
@@ -29,8 +30,9 @@ function Navbar({search}) {
     </li>
   </ul>
   <div className="search" >
-    <a href="/Ser"> <div className="item-search">find movies <i class='bx bx-search-alt-2'></i></div> </a>
-
+<Link to={"/Ser"}>
+  <div className="item-search">find movies <i class='bx bx-search-alt-2'></i></div> 
+  </Link>
   </div>
 </header>
 

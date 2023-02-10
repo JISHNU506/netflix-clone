@@ -5,7 +5,7 @@ import './RowPost.css';
 import axios from 'axios';
 import { image_URL } from '../../constants/Constants';
 
-import { API_KEY } from '../../constants/Constants';
+
 import { Navigate, useNavigate } from 'react-router-dom';
 
 
@@ -17,10 +17,10 @@ function RowPost(props) {
   useEffect(() => {
   
   axios.get(props.url).then(resp=>{
-    console.log("resp=====>",resp.data.results);
-    setMovies(resp.data.results)
+    // console.log("resp=====>",resp.data.results);
+    setMovies(resp?.data?.results)
   })
-  console.log("data====>",movies);
+  // console.log("data====>",movies);
 
   }, [])
   
@@ -31,7 +31,7 @@ function RowPost(props) {
     
    
    <div className='row'>
-    <h2>{props.title}</h2>
+    <h2>{props?.title}</h2>
 
   <div className="posters">
   {movies.map((item)=>  
@@ -39,7 +39,7 @@ function RowPost(props) {
     {/* {console.log("iteeeetaa===>",item.id)} */}
      {/* <span onClick={()=>MovieTriler(item.id)}> */}
       <span onClick={()=>navigate(`/Details/${item.id}`)}>
- <img  className={props.isSmall ? 'smallPoster':'poster'} src={`${image_URL+item?.poster_path}`} alt="poster"/> 
+ <img  className={props?.isSmall ? 'smallPoster':'poster'} src={`${image_URL+item?.poster_path}`} alt="poster"/> 
 </span>
     </>
 )}  
