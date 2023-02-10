@@ -3,7 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 // import Details from './components/SELECTEDPAGE/Details';
 import { BrowserRouter, Routes, Route, useNavigate, Navigate } from "react-router-dom";
-import Login from './components/Loginpage/Login';
+
 
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ function App() {
         <Route path="/" element={<Home />}/>
          
           <Route path="/Details/:Datname" element={<Singlemovie  />} />
-          <Route path="/Login" element={<Login />} />
+         
 
           <Route path="/Ser" element={<Ser/>} />
  
